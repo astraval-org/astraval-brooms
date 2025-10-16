@@ -1,0 +1,15 @@
+services:
+  astraval-brooms:
+    image: kkbughunter/astraval-brooms:latest
+    ports:
+      - "80:80"
+    container_name: astraval-brooms-prod
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - astraval-network
+
+networks:
+  astraval-network:
+    driver: bridge

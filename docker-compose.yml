@@ -1,0 +1,18 @@
+services:
+  astraval-brooms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "3000:80"
+    container_name: astraval-brooms-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - astraval-network
+
+networks:
+  astraval-network:
+    driver: bridge
